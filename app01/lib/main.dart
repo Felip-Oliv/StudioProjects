@@ -14,16 +14,23 @@ void main() {
           padding: EdgeInsets.all(20),
           child: Column(
             children: [
+              Text('Cadastre um novo caderno'),
               TextField( obscureText: true,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: 'Nome do cardo',
+                labelText: 'Nome',
               ),
               ),
               TextField( obscureText: true,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  labelText: 'Tipo do cardno',
+                  labelText: 'Tipo',
+                ),
+              ),
+              TextField( obscureText: true,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Tema',
                 ),
               ),
             ],
