@@ -9,7 +9,7 @@ void main() {
           ),
           drawer: Drawer(child: MenuItens()),
           body: Padding(
-            padding: EdgeInsets.all(20),
+            padding: EdgeInsets.all(16.0),
             child: Column(
               children: [
                 Text('Cadastre um novo caderno'),
