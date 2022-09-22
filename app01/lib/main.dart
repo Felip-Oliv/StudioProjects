@@ -76,13 +76,25 @@ class ReceitasPagina extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Receitas'),
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Voltar!'),
-        ),
+      body: ListView(
+        children: [
+          ListTile(
+            onTap: (){
+              print('receita 1');
+            },
+            leading: Icon(Icons.check_box),
+            title: Text('22/09/2022'),
+            subtitle: Text('teste receita'),
+          ),
+          ListTile(
+            onTap: (){
+              print('receita 2');
+            },
+            leading: Icon(Icons.check_box),
+            title: Text('25/09/2022'),
+            subtitle: Text('teste receita'),
+          ),
+        ],
       ),
     );
   }
@@ -125,14 +137,25 @@ class EstudosPagina extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Estudos'),
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Voltar!'),
-
-        ),
+      body: ListView(
+        children: [
+          ListTile(
+            onTap: (){
+              print('Ciencia de dados');
+            },
+            leading: Icon(Icons.check_box),
+            title: Text('22/09/2022'),
+            subtitle: Text('apresentação do trabalho dev mobile'),
+          ),
+          ListTile(
+            onTap: (){
+              print('reunião 2 agendada');
+            },
+            leading: Icon(Icons.check_box),
+            title: Text('25/09/2022'),
+            subtitle: Text('comemoração de aniversário da empresa'),
+          ),
+        ],
       ),
     );
   }
@@ -144,14 +167,25 @@ class AgendaPagina extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Agenda'),
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Voltar!'),
-
-        ),
+      body: ListView(
+        children: [
+          ListTile(
+            onTap: (){
+              print('reunião 1 agendada');
+            },
+            leading: Icon(Icons.check_box),
+            title: Text('22/09/2022'),
+            subtitle: Text('apresentação do trabalho dev mobile'),
+          ),
+          ListTile(
+            onTap: (){
+              print('reunião 2 agendada');
+            },
+            leading: Icon(Icons.check_box),
+            title: Text('25/09/2022'),
+            subtitle: Text('comemoração de aniversário da empresa'),
+          ),
+        ],
       ),
     );
   }
@@ -163,13 +197,25 @@ class ComprasPagina extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Compras Página'),
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Voltar!'),
-        ),
+      body:ListView(
+        children: [
+          ListTile(
+            onTap: (){
+              print('pão');
+            },
+            leading: Icon(Icons.check_box),
+            title: Text('22/09/2022'),
+            subtitle: Text('padaria '),
+          ),
+          ListTile(
+            onTap: (){
+              print('teste');
+            },
+            leading: Icon(Icons.check_box),
+            title: Text('queijo'),
+            subtitle: Text('paderia'),
+          ),
+        ],
       ),
     );
   }
