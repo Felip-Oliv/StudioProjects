@@ -93,7 +93,7 @@ class ReuniaoPagina extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Segunda Página'),
+        title: const Text('Reunião'),
       ),
       body: Center(
         child: ElevatedButton(
@@ -149,7 +149,7 @@ class ComprasPagina extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Terceira Página'),
+        title: const Text('Compras Página'),
       ),
       body: Center(
         child: ElevatedButton(
@@ -193,7 +193,15 @@ class MyCustomFormState extends State<MyCustomForm> {
           TextFormField(
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter some text';
+                return 'Digite o nome no campo';
+              }
+              return null;
+            },
+          ),
+          TextFormField(
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Digite o nome no campo';
               }
               return null;
             },
@@ -207,11 +215,11 @@ class MyCustomFormState extends State<MyCustomForm> {
                   // If the form is valid, display a snackbar. In the real world,
                   // you'd often call a server or save the information in a database.
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Processing Data')),
+                    const SnackBar(content: Text('Processando')),
                   );
                 }
               },
-              child: const Text('Submit'),
+              child: const Text('Cadastrar'),
             ),
           ),
         ],
