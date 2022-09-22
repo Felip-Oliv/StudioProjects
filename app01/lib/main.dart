@@ -76,26 +76,7 @@ class ReceitasPagina extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Receitas'),
       ),
-      body: ListView(
-        children: [
-          ListTile(
-            onTap: (){
-              print('receita 1');
-            },
-            leading: Icon(Icons.check_box),
-            title: Text('22/09/2022'),
-            subtitle: Text('teste receita'),
-          ),
-          ListTile(
-            onTap: (){
-              print('receita 2');
-            },
-            leading: Icon(Icons.check_box),
-            title: Text('25/09/2022'),
-            subtitle: Text('teste receita'),
-          ),
-        ],
-      ),
+      body:const MyCustomForm2(),
     );
   }
 }
@@ -260,6 +241,70 @@ class MyCustomFormState extends State<MyCustomForm> {
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Digite o nome no campo';
+              }
+              return null;
+            },
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            child: ElevatedButton(
+              onPressed: () {
+                // Validate returns true if the form is valid, or false otherwise.
+                if (_formKey.currentState!.validate()) {
+                  // If the form is valid, display a snackbar. In the real world,
+                  // you'd often call a server or save the information in a database.
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Processando')),
+                  );
+                }
+              },
+              child: const Text('Cadastrar'),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class MyCustomForm2 extends StatefulWidget {
+  const MyCustomForm2({super.key});
+
+  @override
+  MyCustomFormState2 createState() {
+    return MyCustomFormState2();
+  }
+}
+
+// Create a corresponding State class.
+// This class holds data related to the form.
+class MyCustomFormState2 extends State<MyCustomForm2> {
+  // Create a global key that uniquely identifies the Form widget
+  // and allows validation of the form.
+  //
+  // Note: This is a GlobalKey<FormState>,
+  // not a GlobalKey<MyCustomFormState>.
+  final _formKey = GlobalKey<FormState>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: _formKey,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          TextFormField(
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Digite o nome da receita';
+              }
+              return null;
+            },
+          ),
+          TextFormField(
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Digite os ingredientes';
               }
               return null;
             },
