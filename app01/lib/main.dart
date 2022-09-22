@@ -8,35 +8,10 @@ void main() {
             title: const Text("<--- Abra seus cadernos"),
           ),
           drawer: Drawer(child: MenuItens()),
-          body: Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Column(
-              children: [
-                Text('Cadastre um novo caderno'),
-                TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Nome',
-                  ),
-                ),
-                TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Tipo',
-                  ),
-                ),
-                TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Tema',
-                  ),
-                ),
-              ],
+          body: const MyCustomForm(),
+
+
             ),
-          )),
     ),
   );
 }
@@ -197,11 +172,11 @@ class MyCustomForm extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 20),
           child: TextField(
             decoration: InputDecoration(
               border: OutlineInputBorder(),
-              hintText: 'Enter a search term',
+              hintText: 'Nome do caderno',
             ),
           ),
         ),
@@ -210,7 +185,7 @@ class MyCustomForm extends StatelessWidget {
           child: TextFormField(
             decoration: const InputDecoration(
               border: UnderlineInputBorder(),
-              labelText: 'Enter your username',
+              labelText: 'Tipp do caderno',
             ),
           ),
         ),
