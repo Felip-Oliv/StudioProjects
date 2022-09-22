@@ -93,15 +93,27 @@ class ReuniaoPagina extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Reunião'),
+        title: const Text('Reuniões'),
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Voltar!'),
-        ),
+      body: ListView(
+        children: [
+          ListTile(
+            onTap: (){
+              print('reunião 1 agendada');
+            },
+            leading: Icon(Icons.check_box),
+            title: Text('22/09/2022'),
+            subtitle: Text('apresentação do trabalho dev mobile'),
+          ),
+          ListTile(
+            onTap: (){
+              print('reunião 2 agendada');
+            },
+            leading: Icon(Icons.check_box),
+            title: Text('25/09/2022'),
+            subtitle: Text('comemoração de aniversário da empresa'),
+          ),
+        ],
       ),
     );
   }
