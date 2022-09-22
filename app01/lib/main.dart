@@ -62,7 +62,7 @@ class MenuItens extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => TerceiraPagina()),
+                MaterialPageRoute(builder: (context) => ReuniaoPagina()),
               );
             }),
         ListTile(
@@ -70,7 +70,23 @@ class MenuItens extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SegundaPagina()),
+                MaterialPageRoute(builder: (context) => ComprasPagina()),
+              );
+            }),
+        ListTile(
+            title: Text("Estudos"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => EstudosPagina()),
+              );
+            }),
+        ListTile(
+            title: Text("Agenda"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AgendaPagina()),
               );
             }),
       ],
@@ -97,7 +113,7 @@ class ReceitasPagina extends StatelessWidget {
   }
 }
 
-class SegundaPagina extends StatelessWidget {
+class ReuniaoPagina extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -115,8 +131,45 @@ class SegundaPagina extends StatelessWidget {
     );
   }
 }
+class EstudosPagina extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Estudos'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text('Voltar!'),
 
-class TerceiraPagina extends StatelessWidget {
+        ),
+      ),
+    );
+  }
+}
+class AgendaPagina extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Agenda'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text('Voltar!'),
+
+        ),
+      ),
+    );
+  }
+}
+class ComprasPagina extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
